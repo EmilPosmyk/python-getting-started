@@ -41,8 +41,7 @@ $ git push heroku main
   - SQLite3
   - requirements with pip
   
-  -r push from a branch: git push heroku BRANCH_NAME:master
-
+  To push from a branch: git push heroku BRANCH_NAME:master
 
 $ heroku run python manage.py migrate
 $ heroku open
