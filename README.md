@@ -34,6 +34,7 @@ $ heroku create
 $ check: git remote -v
 $ heroku git:remote -a ancient-ridge-13440
 $ set git remote heroku to https://git.heroku.com/ancient-ridge-13440.git
+$ set git remote heroku to https://github.com/EmilPosmyk/python-getting-started.git 
 $ git push heroku main
   It will install:
   - python-3.9.2
