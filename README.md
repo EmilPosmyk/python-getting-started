@@ -12,15 +12,17 @@ Make sure you have Python 3.9 [installed locally](https://docs.python-guide.org/
 $ git clone https://github.com/heroku/python-getting-started.git
 $ cd python-getting-started
 
-$ python3 -m venv getting-started
+$ Anaconda prompt:
+$ python -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
+$ createdb python_getting_started or createdb -U postgres python_getting_started
 
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
+$ heroku local (doesn't work on WIN10 - No module named 'fcntl'')
+  call this: heroku local web -f Procfile.windows
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
@@ -29,10 +31,23 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 ```sh
 $ heroku create
+$ check: git remote -v
+$ heroku git:remote -a ancient-ridge-13440
+$ set git remote heroku to https://git.heroku.com/ancient-ridge-13440.git
 $ git push heroku main
+  It will install:
+  - python-3.9.2
+  - pip 20.1.1, setuptools 47.1.1 and wheel 0.34.2
+  - SQLite3
+  - requirements with pip
+  
+  -r push from a branch: git push heroku BRANCH_NAME:master
+
 
 $ heroku run python manage.py migrate
 $ heroku open
+  It will open: https://ancient-ridge-13440.herokuapp.com/
+  You can open also: http://localhost:5000/
 ```
 or
 
